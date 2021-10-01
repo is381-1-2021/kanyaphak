@@ -22,7 +22,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
   String _firstName = '';
   String _lastName = '';
   int _age = 20;
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -73,7 +72,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
               } catch (e) {
                 return 'Please enter number only';
               }
-
               var a = null;
               var b = '';
             },
@@ -85,6 +83,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text('Processing $_firstName $_lastName $_age'),
+                ));
 
                 var response = 'Processing $_firstName $_lastName $_age';
 
