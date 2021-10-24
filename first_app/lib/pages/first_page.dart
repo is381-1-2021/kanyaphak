@@ -37,7 +37,7 @@ class _FirstPageState extends State<FirstPage> {
               child: Consumer<FormModel>(
                 builder: (context, model, child) {
                   return Text(
-                      'First Page - ${model.firstname} ${model.lastname} ${model.age}');
+                      'First Page - ${model.firstName} ${model.lastName} ${model.age}');
                 },
               ),
             ),

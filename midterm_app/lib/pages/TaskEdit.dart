@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class task_edit extends StatelessWidget {
+class TaskEdit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

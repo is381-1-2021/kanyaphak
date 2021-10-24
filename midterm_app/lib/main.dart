@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pages/task_overview.dart';
-import 'pages/task_edit.dart';
+import 'pages/TaskOverview.dart';
+import 'pages/TaskEdit.dart';
 import 'pages/daily_activities.dart';
 import 'pages/habit_tracker.dart';
 import 'pages/mood_tracker.dart';
@@ -28,12 +28,12 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       //initialRoute: '/1',
       routes: <String, WidgetBuilder>{
-        '/1': (context) => task_overview(),
+        '/1': (context) => TaskOverview(),
         '/2': (context) => moodish_goods(),
         '/3': (context) => daily_activities(),
         '/4': (context) => habit_tracker(),
         '/5': (context) => mood_tracker(),
-        '/6': (context) => task_edit(),
+        '/6': (context) => TaskEdit(),
         '/7': (context) => login(),
         '/7': (context) => food_calories(),
       },

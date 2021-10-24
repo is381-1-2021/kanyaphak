@@ -1,12 +1,15 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 
-class task_overview extends StatefulWidget {
+class TaskOverview extends StatefulWidget {
   @override
   _OverviewState createState() => _OverviewState();
 }
 
-class _OverviewState extends State<task_overview> {
+class _OverviewState extends State<TaskOverview> {
   String? _message = '';
+
   final List<String> entries = <String>[
     'Go to hospital \n\n DETAIL : \nGo to vaccinated.',
     'Watering a plant \n\n DETAIL : \nWatering just cactus and banana.',
@@ -27,8 +30,9 @@ class _OverviewState extends State<task_overview> {
               setState(() {
                 _message = response.toString();
               });
-              if (_message != null || _message!.isEmpty) {
+              if (_message != '') {
                 entries.add(_message!);
+                print(_message!.runtimeType);
               }
             },
           ),
