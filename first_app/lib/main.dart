@@ -14,9 +14,12 @@ import 'package:first_app/controllers/todo_controller.dart';
 import 'package: first_app/pages/eighth_page.dart';
 import 'package:first_app/pages/todo_page.dart';
 import 'package: first_app/services/services.dart';
+import 'package:firebase_core/firebase_core.dart ';
 
 void main() {
-  var services = HttpServices();
+  WidgetsFlutterBind ing.ensureInitialized();
+  await Firebase.initializeApp();
+  var services = FirebaseServices();
   var controller = TodoController(services);
 
   runApp(TodoApp(controller: controller));

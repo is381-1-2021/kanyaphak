@@ -2,8 +2,23 @@ import 'dart:convert';
 
 import 'package:first_app/models/todo_model.dart';
 import 'package:http/http.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class HttpServices {
+abstract class Service {
+  Future<List<Todo>> getTodos();
+}
+
+class FirebaseServices extends Service {
+  @override
+  Future<List<Todo>> getTodos() async {
+    QuerySnapshot snapshot =
+        await FirebaseFirestore.instance.collection('mink_todos').get();
+    var all = AllTodos.fromSnapshot(snapshot);
+    return all.todos;
+  }
+}
+
+class HttpServices extends Services {
   Client client = Client();
 
   Future<List<Todo>> getTodos() async {
@@ -15,7 +30,7 @@ class HttpServices {
       throw Exception('Failed to load todos');
     }
 
-    var all = ALlTodos.fromJson(json.decode(response.body));
+    var all = AllTodos.fromJson(json.decode(response.body));
 
     return all.todos;
   }

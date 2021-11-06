@@ -2,9 +2,10 @@ import 'dart:async';
 
 import 'package:first_app/models/todo_model.dart';
 import 'package:first_app/services/services.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class TodoController{
-  final HttpServices services;
+  final Services services;
   List<Todo> todos = List.empty();
 
   StreamControllerbool> onSyncController = Streamcontroller();

@@ -30,4 +30,12 @@ class AllTodos {
 
     return AllTodos(x);
   }
+
+  factory AllTodos.fromSnapshot(QuerySnapshot snapshot) {
+    var x = snapshot.docs.map((record) {
+      return Todo.fromJson(record.data() as Map<String, dynamic>);
+    }).toList();
+
+    return AllTodos(x);
+  }
 }
