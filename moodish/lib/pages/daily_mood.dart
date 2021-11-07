@@ -144,7 +144,7 @@ class _MoodFormState extends State<MoodForm> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   GestureDetector(
-                    onTap: () => setState(() => _weather = 'Sunny'),
+                    onTap: () => setState(() => _weather = 'Sunny'), //แก้กางปีก
                     child: Container(
                       height: 60,
                       width: 60,

@@ -7,13 +7,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:midterm_app/controllers/note_controller.dart';
 
 import 'package:midterm_app/main.dart';
+import 'package:midterm_app/services/services.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+    var services = FirebaseServices();
+    var controller = NoteController(services);
+    await tester.pumpWidget(MyApp(controller: controller,));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

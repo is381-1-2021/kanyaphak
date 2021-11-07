@@ -55,28 +55,6 @@ class Home extends StatelessWidget {
                       children: <Widget>[
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/1');
-                          },
-                          child: Container(
-                            child: Category(
-                              title: 'Login/Logout',
-                              png: 'assets/icon.png',
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(context, '/11');
-                          },
-                          child: Container(
-                            child: Category(
-                              title: 'Activities',
-                              png: 'assets/DailyActivities.png',
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
                             Navigator.pushNamed(context, '/3');
                           },
                           child: Container(
@@ -120,6 +98,21 @@ class Home extends StatelessWidget {
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      await Navigator.pushNamed(context, '/1');
+                    }, 
+                    icon: Icon(Icons.login), 
+                    label: Text('Login/Logout'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFF5F478C),
+                      fixedSize: Size(250,50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      textStyle: TextStyle(fontSize: 20),
                     ),
                   ),
                 ],

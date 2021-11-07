@@ -42,9 +42,9 @@ class AddQuote extends StatelessWidget {
                   primary: Color(0xFF5F478C),
                 ),
                 onPressed: () {
-                  Provider.of<NotesOperation>(context, listen: false)
-                      .addNewNote(quote);
-                  Navigator.pop(context);
+                //  Provider.of<NotesOperation>(context, listen: false)
+                //      .addNewNote(date, quote);
+                //  Navigator.pop(context);
                 },
                 child: Text('Add Quote'),
               ),

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:midterm_app/models/Note.dart';
 
@@ -13,7 +14,7 @@ class NotesOperation extends ChangeNotifier {
   }
 
   void addNewNote(String quote) {
-    Note note = Note(quote);
+    Note note = Note(DateTime.now(),quote);
     _notes.add(note);
     notifyListeners();
   }
